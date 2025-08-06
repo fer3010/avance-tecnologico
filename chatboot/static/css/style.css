@@ -1,104 +1,40 @@
-/* Estilos generales para el cuerpo del documento */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f0f2f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    font-family: Arial, sans-serif;
 }
-
-/* Contenedor principal del chatbot */
-.chatbot-container {
-    width: 100%;
-    max-width: 400px;
-    height: 600px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+#chat-container {
+    width: 400px;
+    height: 500px;
+    border: 1px solid #ccc;
+    margin: 20px auto;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
-
-/* Encabezado del chatbot */
-.chatbot-header {
-    background-color: #007bff;
-    color: #fff;
-    padding: 15px;
-    text-align: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-/* Área de mensajes (el cuerpo del chat) */
-.chatbot-messages {
-    flex: 1;
-    padding: 20px;
+#chat-log {
+    flex-grow: 1;
+    padding: 10px;
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 }
-
-/* Estilo para los mensajes del usuario */
-.message.user {
-    align-self: flex-end;
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 15px 15px 0 15px;
-    max-width: 80%;
-}
-
-/* Estilo para los mensajes del bot */
-.message.bot {
-    align-self: flex-start;
-    background-color: #e9ecef;
-    color: #333;
-    padding: 10px 15px;
-    border-radius: 15px 15px 15px 0;
-    max-width: 80%;
-}
-
-/* Contenedor del área de entrada de texto */
-.chatbot-input-area {
+#user-input-form {
     display: flex;
     padding: 10px;
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid #ccc;
 }
-
-/* Campo de texto para escribir mensajes */
-.chatbot-input {
-    flex: 1;
-    border: 1px solid #ced4da;
-    border-radius: 20px;
-    padding: 10px 15px;
-    font-size: 1em;
-    outline: none;
-    transition: border-color 0.3s;
+#user-input {
+    flex-grow: 1;
+    padding: 8px;
 }
-
-.chatbot-input:focus {
-    border-color: #007bff;
+#send-btn {
+    padding: 8px;
+    margin-left: 5px;
 }
-
-/* Botón para enviar mensajes */
-.chatbot-send-btn {
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    margin-left: 10px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
+.message {
+    margin-bottom: 10px;
 }
-
-.chatbot-send-btn:hover {
-    background-color: #0056b3;
+.user-message {
+    text-align: right;
+    color: #007bff;
+}
+.bot-message {
+    text-align: left;
+    color: #333;
 }
