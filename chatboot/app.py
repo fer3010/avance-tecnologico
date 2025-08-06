@@ -19,22 +19,22 @@ def chatbot_response(user_message):
     else :
         return "Lo siento, no entendí tu pregunta. ¿Podrías reformularla?"
     
-    @app.route('/')
-    def index():
-        return render_template('index.html')
-    
-    @app.route('/chat', methods=['POST'])
-    def get_response():
-        user_message = request.json.get('message')
-        response=chatbot_response(user_message)
-        return jsonify({'response': response})
-    
-    if __name__ == '__main__':
-        app.run(debug=True)
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-        user_message = request.json.get('message')
-        if not user_message:
-            return jsonify({'error': 'No message provided'}), 400
-        
-        response = chatbot_response(user_message)
-        return jsonify({'response': response})
+@app.route('/chat', methods=['POST'])
+def get_response():
+    user_message = request.json.get('message')
+    response=chatbot_response(user_message)
+    return jsonify({'response': response})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+    user_message = request.json.get('message')
+    if not user_message:
+        return jsonify({'error': 'No message provided'}), 400
+    
+    response = chatbot_response(user_message)
+    return jsonify({'response': response})
