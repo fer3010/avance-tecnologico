@@ -23,10 +23,10 @@ def chatbot_response(user_message):
 def index():
     return render_template('index.html')
 
-@app.route('/chat', methods=['POST'])
+@app.route('/get_response', methods=['POST'])
 def get_response():
     user_message = request.json.get('message')
-    response=chatbot_response(user_message)
+    response = chatbot_response(user_message)
     return jsonify({'response': response})
 
 if __name__ == '__main__':
