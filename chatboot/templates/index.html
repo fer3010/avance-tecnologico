@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot de Reglas</title>
+    <title>Chatbot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div id="chat-container">
+        <div id="chat-header">
+            <h1 class="chat-title">Chatbot de Reglas</h1>
+        </div>
         <div id="chat-log">
-            <div class="message bot-message">¡Hola! Soy un chatbot. Escribe 'ayuda' para ver qué puedo hacer.</div>
+            <div class="message bot-message">¡Hola! Soy un chatbot. Escribe **'ayuda'** para ver qué puedo hacer.</div>
         </div>
         <form id="user-input-form">
             <input type="text" id="user-input" placeholder="Escribe tu mensaje..." autocomplete="off">
-            <button type="submit" id="send-btn">Enviar</button>
+            <button type="submit" id="send-btn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
         </form>
     </div>
 
